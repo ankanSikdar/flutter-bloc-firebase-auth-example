@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "216456299889",
+    "project_id": "flutter-bloc-login-example",
+    "storage_bucket": "flutter-bloc-login-example.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:216456299889:android:3f68500d203a17c0eba2d0",
+        "android_client_info": {
+          "package_name": "dev.ankan.bloc_firebase_login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "216456299889-k6p26g5325f9l14feg4ssiu0rvgco3mt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkm-SzaEubGESDuoeRjGtyAkBKT3RzALs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "216456299889-k6p26g5325f9l14feg4ssiu0rvgco3mt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
