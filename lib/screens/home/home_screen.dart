@@ -9,20 +9,24 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final user = context.read<AuthBloc>().state.user;
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-        actions: [
-          IconButton(
-              icon: Icon(Icons.logout),
-              onPressed: () {
-                context.read<AuthenticationRepository>().logOut();
-              })
-        ],
-      ),
-      body: Container(
-        child: Center(
-          child: Text(user.email),
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Home'),
+          automaticallyImplyLeading: false,
+          actions: [
+            IconButton(
+                icon: Icon(Icons.logout),
+                onPressed: () {
+                  context.read<AuthenticationRepository>().logOut();
+                })
+          ],
+        ),
+        body: Container(
+          child: Center(
+            child: Text(user.email),
+          ),
         ),
       ),
     );
