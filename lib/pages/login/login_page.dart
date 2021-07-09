@@ -1,4 +1,8 @@
+import 'package:bloc_firebase_login/pages/login/cubit/login_cubit.dart';
+import 'package:bloc_firebase_login/pages/login/widgets/login_form.dart';
+import 'package:bloc_firebase_login/repositories/repositories.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key}) : super(key: key);
@@ -18,35 +22,11 @@ class _LoginPageState extends State<LoginPage> {
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 48.0),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            children: [
-              TextFormField(
-                decoration: InputDecoration(labelText: 'Email'),
-                validator: (value) {
-                  if (value.trim().isEmpty) {
-                    return 'Cannot be empty';
-                  }
-                  return null;
-                },
-              ),
-              SizedBox(height: 16.0),
-              TextFormField(
-                decoration: InputDecoration(labelText: 'Password'),
-                validator: (value) {
-                  if (value.trim().isEmpty) {
-                    return 'Cannot be empty';
-                  }
-                  return null;
-                },
-              ),
-              SizedBox(height: 32.0),
-              ElevatedButton(onPressed: () {}, child: Text('Login')),
-              SizedBox(height: 8.0),
-              ElevatedButton(onPressed: () {}, child: Text('Sign Up')),
-            ],
+        child: BlocProvider<LoginCubit>(
+          create: (context) => LoginCubit(
+            context.read<AuthenticationRepository>(),
           ),
+          child: LoginForm(formKey: _formKey),
         ),
       ),
     );
