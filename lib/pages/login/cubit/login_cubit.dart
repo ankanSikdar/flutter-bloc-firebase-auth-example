@@ -12,6 +12,10 @@ class LoginCubit extends Cubit<LoginState> {
       : _authenticationRepository = authenticationRepository,
         super(LoginState.initial());
 
+  void reset() {
+    emit(LoginState.initial());
+  }
+
   void emailChanged(String value) {
     emit(state.copyWith(email: value));
   }

@@ -22,6 +22,7 @@ class LoginForm extends StatelessWidget {
             ..showSnackBar(
               const SnackBar(content: Text('Authentication Failure')),
             );
+          context.read<LoginCubit>().reset();
         }
       },
       child: Form(

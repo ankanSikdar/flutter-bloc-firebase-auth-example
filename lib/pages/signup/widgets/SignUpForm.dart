@@ -21,6 +21,7 @@ class SignUpForm extends StatelessWidget {
             ..showSnackBar(
               const SnackBar(content: Text('Sing Up Failure')),
             );
+          context.read<SignupCubit>().reset();
         }
       },
       child: Form(
