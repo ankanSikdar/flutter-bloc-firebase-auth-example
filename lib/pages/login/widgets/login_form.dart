@@ -1,4 +1,5 @@
 import 'package:bloc_firebase_login/pages/login/cubit/login_cubit.dart';
+import 'package:bloc_firebase_login/pages/signup/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -59,7 +60,16 @@ class LoginForm extends StatelessWidget {
                 },
                 child: Text('Login')),
             SizedBox(height: 8.0),
-            ElevatedButton(onPressed: () {}, child: Text('Create Account')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SignUpPage(),
+                    ),
+                  );
+                },
+                child: Text('Create Account')),
           ],
         ),
       ),

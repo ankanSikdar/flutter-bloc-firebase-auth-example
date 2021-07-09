@@ -59,7 +59,12 @@ class SignUpForm extends StatelessWidget {
                 },
                 child: Text('Create Account')),
             SizedBox(height: 8.0),
-            ElevatedButton(onPressed: () {}, child: Text('Back to Login?')),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Back to Login?'),
+            ),
           ],
         ),
       ),
