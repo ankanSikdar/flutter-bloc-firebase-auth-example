@@ -1,3 +1,4 @@
+import 'package:bloc_firebase_login/blocs/app_bloc_ovserver.dart';
 import 'package:bloc_firebase_login/blocs/auth/bloc/auth_bloc.dart';
 import 'package:bloc_firebase_login/pages/splash/splash_scree.dart';
 import 'package:bloc_firebase_login/repositories/auth/authentication_repository.dart';
@@ -7,6 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  Bloc.observer = AppBlocObserver();
   await Firebase.initializeApp();
   runApp(MyApp());
 }

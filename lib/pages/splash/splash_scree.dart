@@ -13,7 +13,8 @@ class SplashScreen extends StatelessWidget {
       child: BlocListener<AuthBloc, AuthState>(
         listenWhen: (previous, current) => previous.status != current.status,
         listener: (context, state) {
-          if (state.status == AuthStatus.unauthenticated) {
+          if (state.status == AuthStatus.unauthenticated ||
+              state.status == AuthStatus.unknown) {
             return Navigator.push(
               context,
               MaterialPageRoute(

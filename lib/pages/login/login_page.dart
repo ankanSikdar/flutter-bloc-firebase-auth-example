@@ -16,17 +16,20 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Login'),
-      ),
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(16.0, 48.0, 16.0, 0.0),
-        child: BlocProvider<LoginCubit>(
-          create: (context) => LoginCubit(
-            context.read<AuthenticationRepository>(),
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Login'),
+        ),
+        body: Padding(
+          padding: EdgeInsets.fromLTRB(16.0, 48.0, 16.0, 0.0),
+          child: BlocProvider<LoginCubit>(
+            create: (context) => LoginCubit(
+              context.read<AuthenticationRepository>(),
+            ),
+            child: SingleChildScrollView(child: LoginForm(formKey: _formKey)),
           ),
-          child: SingleChildScrollView(child: LoginForm(formKey: _formKey)),
         ),
       ),
     );
