@@ -22,6 +22,7 @@ class SignUpForm extends StatelessWidget {
               SnackBar(content: Text('${state.error}')),
             );
           context.read<SignupCubit>().reset();
+          _formKey.currentState.reset();
         }
       },
       child: Form(
