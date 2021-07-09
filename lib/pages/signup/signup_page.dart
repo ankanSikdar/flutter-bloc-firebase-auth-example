@@ -18,7 +18,7 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: Text('Sing Up'),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 48.0),
