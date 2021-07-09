@@ -13,8 +13,10 @@ class SplashScreen extends StatelessWidget {
       child: BlocListener<AuthBloc, AuthState>(
         listenWhen: (previous, current) => previous.status != current.status,
         listener: (context, state) {
-          if (state.status == AuthStatus.unauthenticated ||
-              state.status == AuthStatus.unknown) {
+          /*
+          At first the status is unkown. When app loads status becomes authenticated or unauthenticated depending upon any user has logged in or not.
+          */
+          if (state.status == AuthStatus.unauthenticated) {
             return Navigator.push(
               context,
               MaterialPageRoute(
