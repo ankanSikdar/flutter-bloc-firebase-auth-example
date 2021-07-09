@@ -21,12 +21,12 @@ class _SignUpPageState extends State<SignUpPage> {
         title: Text('Sing Up'),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 48.0),
+        padding: EdgeInsets.fromLTRB(16.0, 48.0, 16.0, 0.0),
         child: BlocProvider<SignupCubit>(
           create: (context) => SignupCubit(
             context.read<AuthenticationRepository>(),
           ),
-          child: SignUpForm(formKey: _formKey),
+          child: SingleChildScrollView(child: SignUpForm(formKey: _formKey)),
         ),
       ),
     );

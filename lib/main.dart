@@ -1,4 +1,5 @@
 import 'package:bloc_firebase_login/blocs/auth/bloc/auth_bloc.dart';
+import 'package:bloc_firebase_login/pages/splash/splash_scree.dart';
 import 'package:bloc_firebase_login/repositories/auth/authentication_repository.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: Scaffold(),
+          home: SplashScreen(),
         ),
       ),
     );

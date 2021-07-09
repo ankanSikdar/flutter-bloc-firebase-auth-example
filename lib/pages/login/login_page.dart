@@ -21,12 +21,12 @@ class _LoginPageState extends State<LoginPage> {
         title: Text('Login'),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 48.0),
+        padding: EdgeInsets.fromLTRB(16.0, 48.0, 16.0, 0.0),
         child: BlocProvider<LoginCubit>(
           create: (context) => LoginCubit(
             context.read<AuthenticationRepository>(),
           ),
-          child: LoginForm(formKey: _formKey),
+          child: SingleChildScrollView(child: LoginForm(formKey: _formKey)),
         ),
       ),
     );
