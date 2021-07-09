@@ -1,6 +1,6 @@
-import 'package:bloc_firebase_login/pages/login/cubit/login_cubit.dart';
-import 'package:bloc_firebase_login/pages/login/widgets/login_form.dart';
 import 'package:bloc_firebase_login/repositories/repositories.dart';
+import 'package:bloc_firebase_login/screens/login/cubit/login_cubit.dart';
+import 'package:bloc_firebase_login/screens/login/widgets/login_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

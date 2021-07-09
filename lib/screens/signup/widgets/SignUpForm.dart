@@ -1,10 +1,9 @@
-import 'package:bloc_firebase_login/pages/login/cubit/login_cubit.dart';
-import 'package:bloc_firebase_login/pages/signup/signup_page.dart';
+import 'package:bloc_firebase_login/screens/signup/cubit/signup_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class LoginForm extends StatelessWidget {
-  const LoginForm({
+class SignUpForm extends StatelessWidget {
+  const SignUpForm({
     Key key,
     @required GlobalKey<FormState> formKey,
   })  : _formKey = formKey,
@@ -14,15 +13,15 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<LoginCubit, LoginState>(
+    return BlocListener<SignupCubit, SignupState>(
       listener: (context, state) {
-        if (state.status == LoginStatus.error) {
+        if (state.status == SignupStatus.error) {
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
-              const SnackBar(content: Text('Authentication Failure')),
+              const SnackBar(content: Text('Sing Up Failure')),
             );
-          context.read<LoginCubit>().reset();
+          context.read<SignupCubit>().reset();
         }
       },
       child: Form(
@@ -38,7 +37,7 @@ class LoginForm extends StatelessWidget {
                 return null;
               },
               onChanged: (value) =>
-                  context.read<LoginCubit>().emailChanged(value),
+                  context.read<SignupCubit>().emailChanged(value),
             ),
             SizedBox(height: 16.0),
             TextFormField(
@@ -50,27 +49,23 @@ class LoginForm extends StatelessWidget {
                 return null;
               },
               onChanged: (value) =>
-                  context.read<LoginCubit>().passwordChanged(value),
+                  context.read<SignupCubit>().passwordChanged(value),
             ),
             SizedBox(height: 32.0),
             ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState.validate()) {
-                    context.read<LoginCubit>().logInWithCredentials();
+                    context.read<SignupCubit>().signupWithEmailAndPassword();
                   }
                 },
-                child: Text('Login')),
+                child: Text('Create Account')),
             SizedBox(height: 8.0),
             ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SignUpPage(),
-                    ),
-                  );
-                },
-                child: Text('Create Account')),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Back to Login?'),
+            ),
           ],
         ),
       ),

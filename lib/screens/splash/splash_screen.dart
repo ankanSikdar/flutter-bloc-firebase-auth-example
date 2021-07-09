@@ -1,5 +1,5 @@
 import 'package:bloc_firebase_login/blocs/auth/bloc/auth_bloc.dart';
-import 'package:bloc_firebase_login/pages/pages.dart';
+import 'package:bloc_firebase_login/screens/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

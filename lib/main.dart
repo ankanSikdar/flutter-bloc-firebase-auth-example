@@ -1,7 +1,7 @@
-import 'package:bloc_firebase_login/blocs/app_bloc_ovserver.dart';
+import 'package:bloc_firebase_login/blocs/app_bloc_observer.dart';
 import 'package:bloc_firebase_login/blocs/auth/bloc/auth_bloc.dart';
-import 'package:bloc_firebase_login/pages/splash/splash_scree.dart';
 import 'package:bloc_firebase_login/repositories/auth/authentication_repository.dart';
+import 'package:bloc_firebase_login/screens/screens.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

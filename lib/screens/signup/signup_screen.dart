@@ -1,8 +1,9 @@
-import 'package:bloc_firebase_login/pages/signup/cubit/signup_cubit.dart';
-import 'package:bloc_firebase_login/pages/signup/widgets/SignUpForm.dart';
 import 'package:bloc_firebase_login/repositories/repositories.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'cubit/signup_cubit.dart';
+import 'widgets/SignUpForm.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key key}) : super(key: key);
