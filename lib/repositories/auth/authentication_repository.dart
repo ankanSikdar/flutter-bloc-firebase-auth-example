@@ -30,7 +30,7 @@ class AuthenticationRepository extends BaseAuthenticationRepository {
         'name': '',
       });
     } catch (e) {
-      throw Exception('SignUp Failure');
+      throw Exception('SIGNUP ERROR: ${e.message}');
     }
   }
 
@@ -41,7 +41,7 @@ class AuthenticationRepository extends BaseAuthenticationRepository {
       await _firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
     } catch (e) {
-      throw Exception('LogIn Failure');
+      throw Exception('LOGIN ERROR: ${e.message}');
     }
   }
 
@@ -50,7 +50,7 @@ class AuthenticationRepository extends BaseAuthenticationRepository {
     try {
       _firebaseAuth.signOut();
     } catch (e) {
-      throw Exception('LogOut Failure');
+      throw Exception('LOGOUT ERROR: ${e.message}');
     }
   }
 }

@@ -34,7 +34,7 @@ class SignupCubit extends Cubit<SignupState> {
       );
       emit(state.copyWith(status: SignupStatus.success));
     } catch (e) {
-      emit(state.copyWith(status: SignupStatus.error));
+      emit(state.copyWith(status: SignupStatus.error, error: e.message));
     }
   }
 }

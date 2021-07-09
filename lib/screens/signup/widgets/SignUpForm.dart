@@ -19,7 +19,7 @@ class SignUpForm extends StatelessWidget {
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
-              const SnackBar(content: Text('Sing Up Failure')),
+              SnackBar(content: Text('${state.error}')),
             );
           context.read<SignupCubit>().reset();
         }
